@@ -133,7 +133,7 @@
 			s3: false,
 			uploadFields: false,
 
-			observeImages: true,
+			observeImages: false,
 
 			modalOverlay: true,
 
@@ -160,7 +160,8 @@
 			activeButtonsStates: {
 				b: 'bold',
 				strong: 'bold',
-				i: 'italic',
+				italic: 'italic',
+				code: 'inline',
 				em: 'italic',
 				del: 'deleted',
 				strike: 'deleted',
@@ -173,7 +174,7 @@
 			},
 			activeButtonsAdd: false, // object, ex.: { tag: 'buttonName' }
 
-			formattingTags: ['p', 'blockquote', 'pre', 'h1', 'h2', 'h3', 'h4'],
+			formattingTags: ['p', 'h1', 'h2', 'h3', 'h4'],
 
 			linebreaks: false,
 			paragraphy: true,
@@ -187,6 +188,7 @@
 
 			boldTag: 'strong',
 			italicTag: 'em',
+			codeTag: 'code',
 
 			// private
 			indentValue: 20,
@@ -211,6 +213,7 @@
 					html: 'HTML',
 					video: 'Insert Video',
 					image: 'Insert Image',
+					equation: 'Insert Equation',
 					table: 'Table',
 					link: 'Link',
 					link_insert: 'Insert link',
@@ -371,6 +374,80 @@
 				{
 					title: lang.html,
 					func: 'toggle'
+				},
+				code:{
+					title: 'code',
+					dropdown:{
+						none: {
+							title:'No Syntax Highlight',
+							func: 'code_none'
+						},
+						python: {
+							title:'Python',
+							func: 'code_python'
+						},
+						ruby: {
+							title: 'Ruby',
+							func: 'code_ruby'
+						},
+						php: {
+							title: 'PHP',
+							func: 'code_php'
+						},
+						javascript: {
+							title: 'JavaScript',
+							func: 'code_js'
+						},
+						html: {
+							title: 'HTML',
+							func: 'code_js'
+						},
+						css: {
+							title: 'CSS',
+							func: 'code_css'
+						},
+						c: {
+							title: 'C',
+							func: 'code_c'
+						},
+						j: {
+							title: 'Java',
+							func: 'code_java'
+						},
+						csharp: {
+							title: 'C#',
+							func: 'code_csharp'
+						},
+						generic: {
+							title: 'Generic Patterns',
+							func: 'code_generic'
+						},
+						shell: {
+							title: 'Shell',
+							func: 'code_shell'
+						},
+						coffeescript: {
+							title: 'CoffeeScript',
+							func: 'code_coffee'
+						},
+						go: {
+							title: 'Go',
+							func: 'code_go'
+						},
+						scheme: {
+							title: 'Scheme',
+							func: 'code_scheme'
+						},
+						lua: {
+							title: 'Lua',
+							func: 'code_lua'
+						},
+						r: {
+							title: 'R',
+							func: 'code_r'
+						}
+
+					}	
 				},
 				formatting:
 				{
@@ -563,6 +640,10 @@
 						}
 					}
 				},
+				equation: {
+					title: lang.equation,
+					func: 'equationShow'
+				},
 				fontcolor:
 				{
 					title: lang.fontcolor,
@@ -629,6 +710,98 @@
 
 			}
 		},
+
+		// Code
+		code_inline: function(){
+			var wrapper = this.selectionWrap('code');
+          	var html = $(wrapper).html();
+      		this.sync();			
+		},
+		code_none: function(){
+			var wrapper = this.selectionWrap('pre');
+          	var html = $(wrapper).html();
+      		this.sync();
+		},	
+		code_python: function(){
+			var wrapper = this.selectionWrap('pre').addClass('lang-python');
+          	var html = $(wrapper).html();
+      		this.sync();
+		},
+		code_ruby: function(){
+			var wrapper = this.selectionWrap('pre').addClass('lang-ruby');
+          	var html = $(wrapper).html();
+      		this.sync();
+		},
+		code_php: function(){
+			var wrapper = this.selectionWrap('pre').addClass('lang-php');
+          	var html = $(wrapper).html();
+      		this.sync();
+		},
+		code_js: function(){
+			var wrapper = this.selectionWrap('pre').addClass('lang-javascript');
+          	var html = $(wrapper).html();
+      		this.sync();
+		},
+		code_html: function(){
+			var wrapper = this.selectionWrap('pre').addClass('lang-html');
+          	var html = $(wrapper).html();
+      		this.sync();
+		},
+		code_css: function(){
+			var wrapper = this.selectionWrap('pre').addClass('lang-css');
+          	var html = $(wrapper).html();
+      		this.sync();
+		},		
+		code_c: function(){
+			var wrapper = this.selectionWrap('pre').addClass('lang-c');
+          	var html = $(wrapper).html();
+      		this.sync();
+		},
+		code_java: function(){
+			var wrapper = this.selectionWrap('pre').addClass('lang-java');
+          	var html = $(wrapper).html();
+      		this.sync();
+		},
+		code_csharp: function(){
+			var wrapper = this.selectionWrap('pre').addClass('lang-csharp');
+          	var html = $(wrapper).html();
+      		this.sync();
+		},
+		code_generic: function(){
+			var wrapper = this.selectionWrap('pre').addClass('lang-generic');
+          	var html = $(wrapper).html();
+      		this.sync();
+		},
+		code_shell: function(){
+			var wrapper = this.selectionWrap('pre').addClass('lang-shell');
+          	var html = $(wrapper).html();
+      		this.sync();
+		},
+		code_coffee: function(){
+			var wrapper = this.selectionWrap('pre').addClass('lang-coffeescript');
+          	var html = $(wrapper).html();
+      		this.sync();
+		},
+		code_go: function(){
+			var wrapper = this.selectionWrap('pre').addClass('lang-go');
+          	var html = $(wrapper).html();
+      		this.sync();
+		},
+		code_scheme: function(){
+			var wrapper = this.selectionWrap('pre').addClass('lang-scheme');
+          	var html = $(wrapper).html();
+      		this.sync();
+		},
+		code_lua: function(){
+			var wrapper = this.selectionWrap('pre').addClass('lang-lua');
+          	var html = $(wrapper).html();
+      		this.sync();
+		},
+		code_r: function(){
+			var wrapper = this.selectionWrap('pre').addClass('lang-r');
+          	var html = $(wrapper).html();
+      		this.sync();
+		},																			
 
 		// CALLBACKS
 		callback: function(type, event, data)
@@ -1558,7 +1731,7 @@
 
 		// TOGGLE
 		toggle: function(direct)
-		{
+		{$('#submit').toggle();//hide submit button when in html edit, because we need the <p> by normal edit
 			var html;
 			if (this.opts.visual)
 			{
@@ -2843,7 +3016,7 @@
 			html = html.replace(/<span style="font-style: italic;">([\w\W]*?)<\/span>/gi, '<' + italicTag + '>$1</' + italicTag + '>');
 			html = html.replace(/<span style="font-weight: bold;">([\w\W]*?)<\/span>/gi, '<' + boldTag + '>$1</' + boldTag + '>');
 
-			// bold, italic, del
+			// bold, italic, del, inline code
 			if (this.opts.boldTag === 'strong') html = html.replace(/<b>([\w\W]*?)<\/b>/gi, '<strong>$1</strong>');
 			else html = html.replace(/<strong>([\w\W]*?)<\/strong>/gi, '<b>$1</b>');
 
@@ -2908,7 +3081,7 @@
 		{
 			// label, abbr, mark, meter, code, q, dfn, ins, time, kbd, var
 
-			var $elem = this.$editor.find('li, img, a, b, strong, sub, sup, i, em, u, small, strike, del, span, cite');
+			var $elem = this.$editor.find('li, img, a, b, strong, code, sub, sup, i, em, u, small, strike, del, span, cite');
 
 			$elem.filter('[style*="font-size"][style*="line-height"]')
 			.css('font-size', '')
@@ -4724,6 +4897,12 @@
 			this.modalClose();
 		},
 
+		// Equation
+		equationShow: function(){
+
+			this.modalInit(this.opts.curLang.equation, this.opts.modal_equation, 460, this);
+		},
+
 		// LINK
 		linkShow: function()
 		{
@@ -5335,6 +5514,18 @@
 		{
 			$.extend( this.opts,
 			{
+				modal_equation: String()
+				+ '<section>'
+					+ '<div class="math-equation">'
+						+ '<p>To insert in-line equation, include it between <code>\\\(</code> and <code>\\\)</code></p>'
+						+ '<p class="math-quote"><code>\\\(ax^2 + bx + c = 0\\\)</code></p>' 
+						+ '<p class="math-quote"><img src="/assets/eq1.png"></p>'
+						+ '<p>To insert equation, include it between <code>\\\[</code> and <code>\\\]</code></p>'
+						+ '<p class="math-quote"><code>\\\[\\\int_a^b f(x) dx=F(b)-F(a)\\\]</code></p>'
+						+ '<p class="math-quote"><img src="/assets/eq2.png"></p>'
+					+ '</div>'
+				+ '</section>',
+
 				modal_file: String()
 				+ '<section>'
 					+ '<div id="redactor-progress" class="redactor-progress redactor-progress-striped" style="display: none;">'
@@ -5373,10 +5564,10 @@
 					+ '<div id="redactor_tabs">'
 						+ '<a href="#" class="redactor_tabs_act">' + this.opts.curLang.upload + '</a>'
 						+ '<a href="#">' + this.opts.curLang.choose + '</a>'
-						+ '<a href="#">' + this.opts.curLang.link + '</a>'
+						//+ '<a href="#">' + this.opts.curLang.link + '</a>'
 					+ '</div>'
-					+ '<div id="redactor-progress" class="redactor-progress redactor-progress-striped" style="display: none;">'
-							+ '<div id="redactor-progress-bar" class="redactor-progress-bar" style="width: 100%;"></div>'
+					//+ '<div id="redactor-progress" class="redactor-progress redactor-progress-striped" style="display: none;">'
+					//		+ '<div id="redactor-progress-bar" class="redactor-progress-bar" style="width: 100%;"></div>'
 					+ '</div>'
 					+ '<form id="redactorInsertImageForm" method="post" action="" enctype="multipart/form-data">'
 						+ '<div id="redactor_tab1" class="redactor_tab">'
