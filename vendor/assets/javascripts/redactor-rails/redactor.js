@@ -5041,12 +5041,10 @@
 					if (target !== '') $(this.insert_link_node).attr('target', target);
 					else $(this.insert_link_node).removeAttr('target');
 
-					this.addClass("no_ajaxify");
 					this.sync();
 				}
 				else
 				{
-					this.addClass("no_ajaxify");
 					this.exec('inserthtml', a);
 				}
 			}
