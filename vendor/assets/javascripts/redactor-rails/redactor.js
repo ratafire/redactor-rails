@@ -5526,7 +5526,18 @@
 				+ '</section>',
 
 				modal_file: String()
-,
+				+ '<section>'
+					+ '<div id="redactor-progress" class="redactor-progress redactor-progress-striped" style="display: none;">'
+							+ '<div id="redactor-progress-bar" class="redactor-progress-bar" style="width: 100%;"></div>'
+					+ '</div>'
+					+ '<form id="redactorUploadFileForm" method="post" action="" enctype="multipart/form-data">'
+						+ '<label>' + this.opts.curLang.filename + '</label>'
+						+ '<input type="text" id="redactor_filename" class="redactor_input" />'
+						+ '<div style="margin-top: 7px;">'
+							+ '<input type="file" id="redactor_file" name="file" />'
+						+ '</div>'
+					+ '</form>'
+				+ '</section>',
 
 				modal_image_edit: String()
 				+ '<section>'
@@ -5559,7 +5570,12 @@
 					+ '</div>'
 					+ '<form id="redactorInsertImageForm" method="post" action="" enctype="multipart/form-data">'
 						+ '<div id="redactor_tab1" class="redactor_tab">'
-							+ '<input type="file" id="redactor_file" name="file" />'
+							+'<div id="file-upload-area-click">'
+								+'<div class="file-upload-area-words artwork-button fileinput-button" id="artwork-drop">'
+									+'<span>Click to Choose an Image</span>'
+									+ '<input type="file" class="artwork-choose" id="redactor_file" name="file" />'
+								+'</div>'
+							+'</div>'	
 						+ '</div>'
 						+ '<div id="redactor_tab2" class="redactor_tab" style="display: none;">'
 							+ '<div id="redactor_image_box"></div>'
@@ -6130,9 +6146,9 @@
 
 			this.droparea = $('<div class="redactor_droparea"></div>');
 			this.dropareabox = $('<div class="redactor_dropareabox">' + this.draguploadOptions.text + '</div>');
-			this.dropalternative = $('<div class="redactor_dropalternative">' + this.draguploadOptions.atext + '</div>');
+			//this.dropalternative = $('<div class="redactor_dropalternative">' + this.draguploadOptions.atext + '</div>');
 
-			this.droparea.append(this.dropareabox);
+			//this.droparea.append(this.dropareabox);
 
 			$(el).before(this.droparea);
 			$(el).before(this.dropalternative);
