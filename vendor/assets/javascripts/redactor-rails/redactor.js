@@ -261,6 +261,7 @@
 					mailto: 'Email',
 					web: 'URL',
 					video_html_code: 'Video Embed Code',
+					video_html_code: 'Video Embed Code: Remember to set the iframe\'s width:750, height:422\'',
 					file: 'Insert File',
 					upload: 'Upload',
 					download: 'Download',
@@ -6406,4 +6407,8 @@
 	};
 
 
+<<<<<<< HEAD
 })(jQuery);
+=======
+})(jQuery);
+>>>>>>> 05062888b59d9c5b95c522aa43e170f70620a394
