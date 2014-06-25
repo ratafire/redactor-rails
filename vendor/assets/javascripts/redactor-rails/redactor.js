@@ -260,7 +260,6 @@
 					text: 'Text',
 					mailto: 'Email',
 					web: 'URL',
-					video_html_code: 'Video Embed Code: Remember to set the iframe width:750, height:422',
 					file: 'Insert File',
 					upload: 'Upload',
 					download: 'Download',
@@ -5637,7 +5636,7 @@
 				modal_video: String()
 				+ '<section>'
 					+ '<form id="redactorInsertVideoForm">'
-						+ '<label>' + this.opts.curLang.video_html_code + '</label>'
+						+ '<label>' + "Remember to set the iframe width:750, height:422" + '</label>'
 						+ '<textarea id="redactor_insert_video_area" style="width: 99%; height: 160px;"></textarea>'
 					+ '</form>'
 				+ '</section>'
