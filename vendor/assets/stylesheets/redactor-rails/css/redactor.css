@@ -471,6 +471,8 @@ body .redactor_toolbar li a.redactor_btn_video2 {background-image: url(/assets/v
 body .redactor_toolbar li a.redactor_btn_painting {background-image: url(/assets/painting.png);}
 
 body .redactor_toolbar li a.redactor_btn_equation {background-image: url(/assets/equation.png);}
+
+body .redactor_toolbar li a.redactor_btn_audio {background-image: url(/assets/audio.png);}
 /*
 	Toolbar classes
 */
