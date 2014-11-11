@@ -473,6 +473,8 @@ body .redactor_toolbar li a.redactor_btn_painting {background-image: url(/assets
 body .redactor_toolbar li a.redactor_btn_equation {background-image: url(/assets/equation.png);}
 
 body .redactor_toolbar li a.redactor_btn_audio {background-image: url(/assets/audio.png);}
+
+body .redactor_toolbar li a.redactor_btn_pdf {background-image: url(/assets/pdf.png);}
 /*
 	Toolbar classes
 */
